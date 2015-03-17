@@ -45,20 +45,33 @@
         }
 
         #headerContainer {
-            background: #e6e6e6;
-            height: 100px;
-            border: 2px #006da5;
-            border-right-style: solid;
-            border-left-style: solid;
+            background: #006da5;
+            height: 50px;
+            width: 100%;
+            position: fixed;
+            border: 2px #005f8f;
             border-bottom-style: solid;
-            border-bottom-left-radius: 10px;
-            border-bottom-right-radius: 10px;
+        }
+
+        #mainLogoContainer {
+            margin: auto;
+            width: 760px;
+            height: 100%;
+        }
+
+        #mainLogoContainer:hover {
+            background: #008ed5;
+        }
+
+        #logoImage {
+            height: 50px;
         }
 
         #middleContainer {
             background: #ffffff;
             /*display: block;*/
-            width: 680px;
+            width: 740px;
+            height: 1000px;
             margin: 0 10px;
             min-height: 200px;
         }
@@ -93,16 +106,14 @@
 </head>
 <body>
 
-<div id="mainContainer">
-    <div id="loginBarContainer">
-        Hello, guest!
+<div id="headerContainer">
+    <div id="mainLogoContainer">
+        <img id="logoImage" src="static/sellit_logo_white.png" />
     </div>
+</div>
 
-    <div id="headerContainer">
-        <div id="mainLogoContainer">
-            <img src="static/sellit_logo_white.png" />
-        </div>
-    </div>
+<div id="mainContainer">
+
 
     <div id="middleContainer">
         Hello
