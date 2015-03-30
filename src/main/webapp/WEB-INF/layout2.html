@@ -10,7 +10,7 @@
 <!--</html>-->
 
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="">
 <head>
     <title>Шаблон</title>
     <style type="text/css">
@@ -25,26 +25,42 @@
         }
 
         body {
-            margin: 0;
             background: #f5f5f5;
-            /*margin-top: 10px;*/
         }
 
-        #mainContainer {
-            margin: 0 auto;
-            width: 760px;
+        .floatClear {
+            clear: both;
         }
 
-        #loginBarContainer {
-            background: #e6f0ff;
-            font-size: 12px;
-            padding: 0 3px;
-            border: 2px #006da5;
-            border-right-style: solid;
-            border-left-style: solid;
+        .floatLeft {
+            float: left;
         }
 
-        #headerContainer {
+        .floatRight {
+            float: right;
+        }
+
+        .clickable:hover {
+            background: #0080bd;
+        }
+
+        .clickable:active {
+            background: #005f8f;
+        }
+
+        .inlineBlock {
+            display: inline-block;
+        }
+
+        a.inTheHeader {
+            color: #ffffff;
+        }
+
+        /* -------------------------------------- */
+        /*            Header elements             */
+        /* -------------------------------------- */
+
+        #headerContainerFixed {
             background: #006da5;
             height: 50px;
             width: 100%;
@@ -53,18 +69,91 @@
             border-bottom-style: solid;
         }
 
-        #mainLogoContainer {
+        #headerContainer {
             margin: auto;
             width: 760px;
             height: 100%;
+            /*color: #ffffff;*/
+            /*border: 2px #005f8f;*/
+            /*border-left-style: solid;*/
+            /*border-right-style: solid;*/
+
         }
 
-        #mainLogoContainer:hover {
-            background: #008ed5;
+        #logoContainer {
+            width: 100px;
+            height: 50px;
+            /*background: #bd0005;*/
         }
+
+        /*#logoContainer:hover {*/
+            /*background: #0080bd;*/
+        /*}*/
 
         #logoImage {
+            width: 100px;
             height: 50px;
+        }
+
+        #postAdvert {
+            font-size: 16px;
+            text-align: center;
+            vertical-align: middle;
+            color: #ffffff;
+            height: 28px;
+            width: 200px;
+            margin-top: 8px;
+            margin-left: 178px;
+            margin-right: 118px;
+            padding-top: 6px;
+            border: 2px solid #ffffff;
+            border-radius: 10px;
+            background: #33902e;
+            background: linear-gradient(to top, #1e6f1a, #33902e );
+
+        }
+
+        #postAdvert:hover {
+            background: #40b43b;
+            background: linear-gradient(to top, #33902e, #42a43c);
+        }
+
+        #accountPanel {
+            width: 160px;
+            height: 50px;
+            text-align: right;
+        }
+
+        #logInButton {
+            margin-top: 13px;
+            height: 20px;
+            display: table;
+            vertical-align: middle;
+            padding: 2px 5px 3px 5px;
+        }
+
+        #logInButtonImage {
+            display: table-cell;
+        }
+
+        #logInIcon {
+            height: 20px;
+        }
+
+        #logInButtonText {
+            padding-left: 5px;
+            display: table-cell;
+            vertical-align: middle;
+
+        }
+
+        /* -------------------------------------- */
+        /*         Main container elements        */
+        /* -------------------------------------- */
+
+        #mainContainer {
+            margin: 0 auto;
+            width: 760px;
         }
 
         #middleContainer {
@@ -76,39 +165,49 @@
             min-height: 200px;
         }
 
-        #menuContainer {
-            background: #ffd847;
-            width: 200px;
-            display: table-cell;
-            /*float: left;*/
-            height: 100%;
-        }
-
-        #contentContainer {
-            margin-left: 200px;
-            display: table-cell;
-            width: 500px;
-            /*float: left;*/
-            background: #7ed1ff;
-        }
-
-        #testContainer {
-            background: red;
-            clear: left;
-        }
+        /* -------------------------------------- */
+        /*            Footer elements             */
+        /* -------------------------------------- */
 
         #footerContainer {
             /*clear: left;*/
             background: #77ff4d;
             height: 70px;
         }
+
     </style>
 </head>
 <body>
 
-<div id="headerContainer">
-    <div id="mainLogoContainer">
-        <img id="logoImage" src="static/sellit_logo_white.png" />
+<div id="headerContainerFixed">
+    <div id="headerContainer">
+        <span id="logoContainer" class="floatLeft clickable">
+            <a href="/" class="inTheHeader">
+                <img id="logoImage" src="static/sellit_logo_white.png" />
+            </a>
+        </span>
+
+        <a href="/" class="inTheHeader">
+            <span id="postAdvert" class="floatLeft">
+                + Дать объявление
+            </span>
+        </a>
+
+        <div id="accountPanel" class="floatLeft">
+            <a href="/" class="inTheHeader">
+                <div class="inlineBlock ">
+                    <div id="logInButton" class="clickable">
+                        <div id="logInButtonImage">
+                            <img id="logInIcon" src="static/loginBig.png" />
+                        </div>
+                        <div id="logInButtonText">
+                            Войти
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+
     </div>
 </div>
 
